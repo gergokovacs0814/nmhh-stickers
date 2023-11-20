@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nmhh-stickers", "nmhh-stickers\nmhh-stickers.csproj", "{50FE37B0-8A75-4F35-9136-A5EDFA529BEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50FE37B0-8A75-4F35-9136-A5EDFA529BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50FE37B0-8A75-4F35-9136-A5EDFA529BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50FE37B0-8A75-4F35-9136-A5EDFA529BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50FE37B0-8A75-4F35-9136-A5EDFA529BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E043E326-7E93-4720-BE2B-E777FCA36FA9}
+	EndGlobalSection
+EndGlobal
