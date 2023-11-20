@@ -8,19 +8,21 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div><table style="margin-left: auto; margin-right: auto; margin-top:150px">
+        <div><table style="margin-left: auto; margin-right: auto; margin-top:120px">
+            
             <tr>
                 <td> <asp:Label ID="lbBarcode" runat="server" Text="Barcode: "></asp:Label></td> <td> <asp:TextBox ID="tbBarcode" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td><asp:Label ID="lbLaptop" runat="server" Text="Laptop/Tablet"> </asp:Label> <asp:CheckBox ID="cbLaptop" runat="server"/></td>
-                <td><asp:Label ID="lblBarcode" runat="server" Text=""></asp:Label></td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
                 <td> </td>
                 <td>
                     <asp:Button ID="btAdd" runat="server" Text="Add" OnClick="btAdd_Click" /></td>
             </tr>
+            
              </table>
         </div>
     </form>

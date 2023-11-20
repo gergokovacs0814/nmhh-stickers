@@ -60,15 +60,6 @@ namespace nmhh_stickers
         protected global::System.Web.UI.WebControls.CheckBox cbLaptop;
 
         /// <summary>
-        /// lblBarcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBarcode;
-
-        /// <summary>
         /// btAdd control.
         /// </summary>
         /// <remarks>

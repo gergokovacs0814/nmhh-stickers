@@ -10,6 +10,7 @@ namespace nmhh_stickers
 {
     public partial class Default : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             lblerror.Visible = false;
@@ -17,6 +18,8 @@ namespace nmhh_stickers
 
         protected void btLogin_Click(object sender, EventArgs e)
         {
+           
+
             switch (USERS.login(tbUser.Text, tbPass.Text))
             {
                 case 1:
