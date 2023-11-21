@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Net.Mail;
 using System.Text;
+using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace nmhh_stickers.classes
 {
@@ -78,29 +80,41 @@ namespace nmhh_stickers.classes
         {
             string pass = Pass.CreatePassword(6);
 
-            MailMessage message = new MailMessage("nmhhmatrica.noreply@gmail.com", email);
+            MAILER mail = new MAILER();
 
-            message.Subject = "NMHH Sticker database";
-            message.Body = "Welcome! <br><br> Your username: "+ uname + "<br>and your password: "+ pass + "<br>Best Regards,<br>Nmhh-stickers";
-            message.BodyEncoding = Encoding.UTF8;
-            message.IsBodyHtml = true;
-            SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
-            System.Net.NetworkCredential basicCredential1 = new
-            System.Net.NetworkCredential("nmhhmatrica.noreply", "tviwaozwmvoszuxk");
-            client.EnableSsl = true;
-            client.UseDefaultCredentials = false;
-            client.Credentials = basicCredential1;
+            mail.ToAddress = email;
+            mail.Body = "Welcome! <br><br> Your username: " + uname + "<br>and your password: " + pass + "<br><br>Best Regards,<br>Nmhh-stickers";
+            mail.Subject = "NMHH Sticker database";
             try
             {
-                client.Send(message);
+                MAILER.sendMail(mail);
                 DBLink.AddInDB("Insert into USERS (username, password, jog, ceg) values ('" + uname + "' , '" + Pass.HashPassword(pass) + "', '2','" + company + "')");
-            }
 
+            } catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void updatePass(string uname, string email)
+        {
+            string pass = Pass.CreatePassword(6);
+
+            MAILER mail = new MAILER();
+
+            mail.ToAddress = email;
+            mail.Body = "Dear " + uname + "! <br><br>Your new password is: " + pass + "<br>Best Regards,<br>Nmhh-stickers";
+            mail.Subject = "New password";
+            try
+            {
+                MAILER.sendMail(mail);
+                DBLink.AddInDB("UPDATE USERS SET password = '" + Pass.HashPassword(pass) + "'WHERE username = '"+ uname +"';");
+
+            }
             catch (Exception ex)
             {
                 throw ex;
             }
-           
 
         }
     }

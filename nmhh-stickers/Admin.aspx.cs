@@ -21,11 +21,15 @@ namespace nmhh_stickers
             {
                 Response.Redirect("Default.aspx");
             }
-            dplbUsername2.Items.Clear();
-            foreach(string username in DBLink.getUsernames())
+            if (!Page.IsPostBack)
             {
-                dplbUsername2.Items.Add(username);
+                dplbUsername2.Items.Clear();
+                foreach (string username in DBLink.getUsernames())
+                {
+                    dplbUsername2.Items.Add(username);
+                }
             }
+               
         }
 
         protected void btnExport_Click(object sender, EventArgs e)
@@ -67,12 +71,12 @@ namespace nmhh_stickers
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            if (tbUsername.Text.Length < 2 || tbEmail.Text.Length < 2 || tbCeg.Text.Length < 2) Response.Write("<script>alert('The given data is not in a correct form');</script>");
+            if (tbUsername.Text.Length < 2 || tbEmail.Text.Length < 2 || tbCompany.Text.Length < 2) Response.Write("<script>alert('The given data is not in a correct form');</script>");
             else
             {
-                USERS.addNewUser(tbUsername.Text, tbEmail.Text, tbCeg.Text);
+                USERS.addNewUser(tbUsername.Text, tbEmail.Text, tbCompany.Text);
 
-                tbCeg.Text = null;
+                tbCompany.Text = null;
                 tbEmail.Text = null;
                 tbUsername.Text = null;
                 Response.Write("<script>alert('Email was sent');</script>");
@@ -82,6 +86,22 @@ namespace nmhh_stickers
         protected void btnNewPass_Click(object sender, EventArgs e)
         {
 
+            
+
+            
+            if(tbEmail2.Text.Length > 1 & dplbUsername2.SelectedItem.Text.Length > 1)
+            {
+                USERS.updatePass(dplbUsername2.SelectedItem.Text, tbEmail2.Text);
+                tbCompany.Text = null;
+                tbEmail.Text = null;
+                tbUsername.Text = null;
+                Response.Write("<script>alert('Email was sent');</script>");
+            }
+            else
+            {
+                  Response.Write("<script>alert('The given data is not in a correct form');</script>");
+            }
+            
         }
     }
 }

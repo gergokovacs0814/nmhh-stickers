@@ -165,6 +165,7 @@
     </Compile>
     <Compile Include="classes\DBLink.cs" />
     <Compile Include="classes\login.cs" />
+    <Compile Include="classes\MAILER.cs" />
     <Compile Include="classes\Pass.cs" />
     <Compile Include="classes\STICKERS.cs" />
     <Compile Include="classes\USERS.cs" />

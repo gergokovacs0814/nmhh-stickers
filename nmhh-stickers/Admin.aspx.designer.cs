@@ -60,13 +60,13 @@ namespace nmhh_stickers
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// tbCeg control.
+        /// tbCompany control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbCeg;
+        protected global::System.Web.UI.WebControls.TextBox tbCompany;
 
         /// <summary>
         /// Label3 control.
